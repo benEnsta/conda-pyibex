@@ -1,0 +1,62 @@
+package:
+  name: pyibex
+  version: "1.5.0a10"
+
+source:
+  git_rev: master
+  git_url: https://github.com/benEnsta/pyIbex
+
+build:
+  script_env:
+    - CC
+    - CXX
+  number: 10
+  # features:
+  #   - vc14    [win]
+
+requirements:
+  build:
+    - python
+    # - setuptools >=23.0.0
+    - ibex-lib >=2.3.0
+    - cmake >=2.8.12
+
+  run:
+    - python
+
+test:
+  # Python imports
+  imports:
+    - pyibex
+  #   - pyibex.examples
+  #   - pyibex.geometry
+  #   - pyibex.polar
+
+  commands:
+    - conda list
+    - echo $(pwd)
+    - python -m unittest discover -v pyibex.tests
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://github.com/benEnsta/pyIbex
+  license: GNU Lesser General Public License v3 or later (LGPLv3+)
+  license_file: LICENSE
+  summary: 'PyIbex a python interface of ibexlib '
+
+extra:
+  recipe-maintainers:
+    # Always check with the people listed below if they are OK becoming maintainers of the recipe. (There will be spam!)
+    - BenEnsta
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
