@@ -10,6 +10,7 @@ environment:
   BINSTAR_TOKEN:
     secure: JHoNjSJ/qEnmDBxTUrryRM/hu5ajQSboycQysdUjVnX8ta/vgvc8ihEnn2zmhPWy
 
+
   matrix:
   # - CONDA: 27
   - CONDA: 35
@@ -38,8 +39,10 @@ build_script:
 - ps: |
     if ($env:CONDA) {
       Try {
-        conda-build-all ./recipes --inspect-channels benensta --upload-channels benensta --matrix-condition "python >=2.7"
+        conda-build-all ./recipes --inspect-channels benensta --upload-channels benensta
       }Catch [Management.Automation.RemoteException] {
+        $Time=Get-Date
+      }Finally{
         $Time=Get-Date
       }
     }

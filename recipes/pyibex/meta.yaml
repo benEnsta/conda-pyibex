@@ -1,21 +1,34 @@
 package:
   name: pyibex
-  version: "1.5.0a10"
+  version: "1.5.0rc1"
 
 source:
   git_rev: master
   git_url: https://github.com/benEnsta/pyIbex
 
 build:
-  # script_env:
-  #   - CC
-  #   - CXX
-  number: 10
+#  script_env:
+#    - CC
+#    - CXX
+  number: 1 [not osx]
+  number: 1 [osx]
   features:
     - vc14    [win]
-  track_features:
-    - vc14    [win]
+# build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - pyibex = pyibex:main
+    #
+    # Would create an entry point called pyibex that calls pyibex.main()
 
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
 
 requirements:
   build:
@@ -28,6 +41,7 @@ requirements:
   run:
     - python
     - gcc >=4.8.5 [osx]
+
 
 test:
   # Python imports
