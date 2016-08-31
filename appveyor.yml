@@ -39,7 +39,7 @@ build_script:
 - ps: |
     if ($env:CONDA) {
       Try {
-        conda-build-all ./recipes --inspect-channels benensta --upload-channels benensta
+        conda-build-all ./recipes --inspect-channels benensta --matrix-condition "python >=3.4" --upload-channels benensta
       }Catch [Management.Automation.RemoteException] {
         $Time=Get-Date
       }Finally{
