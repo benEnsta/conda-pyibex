@@ -23,10 +23,12 @@ requirements:
     - ibex-lib >=2.3.0
     - cmake >=2.8.12
     - gcc >=4.8.5 [osx]
+    - pyibex
 
   run:
     - python
     - pyibex
+    - gcc >=4.8.5 [osx]
 
 test:
   commands:
@@ -48,7 +50,7 @@ about:
   home: https://github.com/benEnsta/ibex-geometry
   license: GNU Lesser General Public License v3 or later (LGPLv3+)
   license_file: LICENSE
-  summary: 'PyIbex a python interface of ibexlib '
+  summary: 'PyIbex-geometry a python interface of ibexlib '
 
 extra:
   recipe-maintainers:
