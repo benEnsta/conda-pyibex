@@ -4,7 +4,7 @@ git submodule init
 git submodule update
 mkdir -p build && cd build
 
-cmake -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX ..
+cmake -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX -DBUILD_TESTS=OFF ..
 make VERBOSE=1
 # make test ARGS="-V"
 make install_python

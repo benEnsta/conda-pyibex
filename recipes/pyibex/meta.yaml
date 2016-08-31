@@ -13,6 +13,9 @@ build:
   number: 10
   features:
     - vc14    [win]
+  track_features:
+    - vc14    [win]
+
 
 requirements:
   build:

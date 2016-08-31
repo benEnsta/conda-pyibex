@@ -11,6 +11,8 @@ build:
   #   - CC
   #   - CXX
   number: 1
+  features:
+    - vc14    [win]
   track_features:
     - vc14    [win]
 
@@ -31,6 +33,11 @@ requirements:
     - gcc >=4.8.5 [osx]
 
 test:
+
+  imports:
+    - pyibex
+    - pyibex_geometry
+
   commands:
     - conda list
     - echo $(pwd)

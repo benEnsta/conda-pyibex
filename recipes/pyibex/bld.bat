@@ -3,6 +3,10 @@ SET DISTUTILS_USE_SDK=1
 SET MSSdk=1
 "%WIN_SDK_ROOT%\%WINDOWS_SDK_VERSION%\Setup\WindowsSdkVer.exe" -q -version:15
 "%WIN_SDK_ROOT%\%WINDOWS_SDK_VERSION%\Bin\SetEnv.cmd" /x64 /MT /release
+set PY_VCRUNTIME_REDIST=C:\Miniconda35-x64\envs\_build\Library\bin\vcruntime140.dll 
+set "VS_VERSION=14.0" 
+set "VS_MAJOR=14" 
+set "VS_YEAR=2015" 
 
 mkdir build
 cd build
