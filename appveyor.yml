@@ -7,9 +7,8 @@ environment:
   # global:
     # DISTUTILS_USE_SDK: 1
     # MSSdk: 1
-  conda_token:
+  BINSTAR_TOKEN:
     secure: JHoNjSJ/qEnmDBxTUrryRM/hu5ajQSboycQysdUjVnX8ta/vgvc8ihEnn2zmhPWy
-
 
   matrix:
   # - CONDA: 27
@@ -41,8 +40,6 @@ build_script:
       Try {
         conda-build-all ./recipes --inspect-channels benensta --upload-channels benensta
       }Catch [Management.Automation.RemoteException] {
-        $Time=Get-Date
-      }Finally{
         $Time=Get-Date
       }
     }

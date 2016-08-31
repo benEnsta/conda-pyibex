@@ -6,7 +6,7 @@ mkdir -p build && cd build
 
 cmake -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX ..
 make VERBOSE=1
-make test
+make test ARGS="-V"
 make install_python
 cd ..
 

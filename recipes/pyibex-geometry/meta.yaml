@@ -11,8 +11,9 @@ build:
     - CC
     - CXX
   number: 1
-  # features:
-    # - vc14    [win]
+  track_features:
+    - vc14    [win]
+
 
 
 requirements:
@@ -21,6 +22,7 @@ requirements:
     # - setuptools >=23.0.0
     - ibex-lib >=2.3.0
     - cmake >=2.8.12
+    - gcc >=4.8.5 [osx]
 
   run:
     - python
