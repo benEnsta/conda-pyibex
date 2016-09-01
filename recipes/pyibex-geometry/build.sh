@@ -8,7 +8,7 @@ cmake -DCMAKE_INSTALL_PREFIX=$CONDA_PREFIX -DBUILD_TESTS=OFF ..
 make VERBOSE=1
 # make test ARGS="-V"
 make install_python
-cd ..
+
 
 
 # $PYTHON setup.py build_ext -I ${CONDA_PREFIX}/include:${CONDA_PREFIX}/include/ibex -L ${CONDA_PREFIX}/lib
